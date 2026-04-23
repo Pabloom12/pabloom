@@ -1,0 +1,147 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: "Cinzel", serif;
+  color: #f5e6c8;
+  background: #0b0b0b;
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.logo {
+  font-family: "Great Vibes", cursive;
+  font-size: 28px;
+  color: #d4af37;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #f5e6c8;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #d4af37;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  background: radial-gradient(circle at center, #1a1a1a, #000);
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+/* AVATAR */
+.avatar {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #d4af37;
+  margin-bottom: 20px;
+}
+
+/* TITULOS */
+.titulo {
+  font-family: "Great Vibes", cursive;
+  font-size: 64px;
+  color: #d4af37;
+}
+
+.subtitulo {
+  margin-top: 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+/* BOTON */
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 30px;
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #d4af37;
+  color: black;
+}
+
+/* SECCIONES */
+.section {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  margin-bottom: 30px;
+  font-size: 32px;
+  color: #d4af37;
+}
+
+/* SPOTIFY */
+.spotify {
+  max-width: 500px;
+  margin: auto;
+}
+
+/* VIDEOS */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.grid iframe {
+  width: 100%;
+  height: 250px;
+  border-radius: 12px;
+}
+
+/* FRASE */
+.frase {
+  text-align: center;
+  padding: 80px 20px;
+  font-family: "Great Vibes", cursive;
+  font-size: 28px;
+  color: #d4af37;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000;
+}
