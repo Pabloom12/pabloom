@@ -10,6 +10,7 @@ body {
   font-family: "Cinzel", serif;
   color: #f5e6c8;
   background: #0b0b0b;
+  padding-top: 80px; /* evita que el header tape contenido */
 }
 
 /* HEADER */
@@ -19,6 +20,7 @@ header {
   top: 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 20px 40px;
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);
@@ -44,11 +46,12 @@ nav a:hover {
 
 /* HERO */
 .hero {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 20px;
 
   background: radial-gradient(circle at center, #1a1a1a, #000);
 }
@@ -144,4 +147,55 @@ footer {
   text-align: center;
   padding: 20px;
   background: #000;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 15px 20px;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  nav a {
+    margin: 0 10px;
+    font-size: 14px;
+  }
+
+  .avatar {
+    width: 150px;
+    height: 150px;
+  }
+
+  .titulo {
+    font-size: 42px;
+  }
+
+  .subtitulo {
+    font-size: 14px;
+  }
+
+  .section {
+    padding: 80px 15px;
+  }
+
+  .section h2 {
+    font-size: 24px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid iframe {
+    height: 200px;
+  }
+
+  .frase {
+    font-size: 22px;
+    padding: 60px 15px;
+  }
 }
