@@ -1,16 +1,30 @@
-/* RESET */
+/* RESET Y MEJORAS GENERALES */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none;
 }
 
-/* BODY */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: "Cinzel", serif;
+  font-family: "Montserrat", sans-serif;
   color: #f5e6c8;
   background: #0b0b0b;
-  padding-top: 80px; /* evita que el header tape contenido */
+  padding-top: 80px;
+  line-height: 1.6;
+}
+
+/* TIPOGRAFÍAS REUTILIZABLES */
+.cinzel-gold {
+  font-family: "Cinzel", serif;
+  color: #d4af37;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 36px;
 }
 
 /* HEADER */
@@ -21,22 +35,26 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(10px);
-  z-index: 10;
+  padding: 15px 50px;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(15px);
+  z-index: 100;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .logo {
   font-family: "Great Vibes", cursive;
-  font-size: 28px;
+  font-size: 32px;
   color: #d4af37;
 }
 
 nav a {
-  margin-left: 20px;
-  text-decoration: none;
+  margin-left: 25px;
+  text-decoration: none; /* Elimina subrayado azul */
   color: #f5e6c8;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
   transition: 0.3s;
 }
 
@@ -51,151 +69,176 @@ nav a:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 20px;
-
-  background: radial-gradient(circle at center, #1a1a1a, #000);
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    radial-gradient(circle at center, #222, #000);
 }
 
-.hero-content {
-  max-width: 600px;
-}
-
-/* AVATAR */
 .avatar {
-  width: 220px;
-  height: 220px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 50%;
-  border: 3px solid #d4af37;
-  margin-bottom: 20px;
+  border: 4px solid #d4af37;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+  margin-bottom: 25px;
 }
 
-/* TITULOS */
 .titulo {
   font-family: "Great Vibes", cursive;
-  font-size: 64px;
+  font-size: clamp(50px, 8vw, 80px);
   color: #d4af37;
 }
 
 .subtitulo {
-  margin-top: 10px;
+  font-family: "Cinzel", serif;
   font-size: 18px;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
+  color: #ccc;
 }
 
-/* BOTON */
+/* BOTON (Arreglo del azul y fuente) */
 .btn {
   display: inline-block;
-  margin-top: 25px;
-  padding: 12px 30px;
-  border: 1px solid #d4af37;
-  color: #d4af37;
-  text-decoration: none;
-  border-radius: 30px;
-  transition: 0.3s;
+  margin-top: 35px;
+  padding: 15px 40px;
+  border: 2px solid #d4af37;
+  color: #d4af37 !important; /* Fuerza el color dorado */
+  text-decoration: none !important; /* Quita el subrayado azul */
+  border-radius: 50px;
+  font-family: "Cinzel", serif; /* Fuente Cinzel para el botón */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.4s ease;
 }
 
 .btn:hover {
   background: #d4af37;
-  color: black;
+  color: #000 !important;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);
 }
 
-/* SECCIONES */
-.section {
-  padding: 100px 20px;
+/* MANIFIESTO */
+.manifiesto {
+  max-width: 900px;
+  margin: 0 auto;
   text-align: center;
 }
 
-.section h2 {
-  margin-bottom: 30px;
-  font-size: 32px;
+.texto-manifiesto p {
+  margin-bottom: 25px;
+  font-size: 18px;
+  color: #f5e6c8;
+  font-weight: 300;
+}
+
+.destaque {
+  font-size: 22px !important;
+  color: #d4af37 !important;
+  font-family: "Cinzel", serif;
+}
+
+.italica {
+  font-style: italic;
+  color: #ccc !important;
+}
+
+.destaque-final {
+  font-family: "Cinzel", serif;
+  font-size: 24px !important;
+  margin-top: 40px;
+}
+
+.destaque-final span {
+  display: block;
+  font-family: "Great Vibes", cursive;
+  font-size: 45px;
   color: #d4af37;
 }
 
-/* SPOTIFY */
-.spotify {
-  max-width: 500px;
-  margin: auto;
-}
-
-/* VIDEOS */
+/* VIDEOS GRID */
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  max-width: 900px;
-  margin: auto;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 
 .grid iframe {
   width: 100%;
-  height: 250px;
-  border-radius: 12px;
+  aspect-ratio: 16/9;
+  border-radius: 15px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
 }
 
-/* FRASE */
-.frase {
+/* FRASE Y FOOTER (Centrado Absoluto) */
+.frase-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 350px;
   text-align: center;
-  padding: 80px 20px;
+  background: rgba(212, 175, 55, 0.03);
+}
+
+.frase-box p {
   font-family: "Great Vibes", cursive;
-  font-size: 28px;
+  font-size: clamp(30px, 5vw, 45px);
   color: #d4af37;
 }
 
-/* FOOTER */
-footer {
+.social-section {
+  padding: 80px 20px;
+  background: #050505;
   text-align: center;
-  padding: 20px;
-  background: #000;
 }
 
-/* 📱 MOBILE */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  margin-top: 25px;
+}
+
+.social-icon {
+  color: #f5e6c8;
+  font-size: 32px;
+  text-decoration: none; /* Evita azul en iconos */
+  transition: 0.3s;
+}
+
+.social-icon:hover {
+  color: #d4af37;
+  transform: translateY(-5px);
+}
+
+footer {
+  padding: 50px 20px;
+  background: #000;
+  text-align: center;
+  border-top: 1px solid #111;
+}
+
+footer p {
+  font-size: 14px;
+  color: #777;
+}
+
+/* MOBILE ADJUSTMENTS */
 @media (max-width: 768px) {
   header {
+    padding: 15px;
     flex-direction: column;
-    padding: 15px 20px;
   }
-
   nav {
-    margin-top: 10px;
+    margin-top: 15px;
   }
-
   nav a {
     margin: 0 10px;
-    font-size: 14px;
+    font-size: 11px;
   }
-
-  .avatar {
-    width: 150px;
-    height: 150px;
-  }
-
-  .titulo {
-    font-size: 42px;
-  }
-
-  .subtitulo {
-    font-size: 14px;
-  }
-
   .section {
-    padding: 80px 15px;
-  }
-
-  .section h2 {
-    font-size: 24px;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .grid iframe {
-    height: 200px;
-  }
-
-  .frase {
-    font-size: 22px;
-    padding: 60px 15px;
+    padding: 60px 5%;
   }
 }
