@@ -75,8 +75,8 @@ nav a:hover {
 }
 
 .avatar {
-  width: 200px;
-  height: 200px;
+  width: clamp(220px, 28vw, 320px);
+  height: clamp(220px, 28vw, 320px);
   object-fit: cover;
   border-radius: 50%;
   border: 4px solid #d4af37;
@@ -170,6 +170,31 @@ nav a:hover {
   aspect-ratio: 16/9;
   border-radius: 15px;
   border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* Centrar el reproductor de Spotify y ajustar la card de video */
+.spotify {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.video-card {
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.06);
+}
+
+.video-card video {
+  width: 70%;
+  margin: 0 auto;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  outline: none;
 }
 
 /* FRASE Y FOOTER (Centrado Absoluto) */
